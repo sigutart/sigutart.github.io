@@ -69,9 +69,13 @@ header li.active {
   border-top: 3px solid green;
 }
 
-.content {
+#content {
   margin-top: 20px;
   flex: 1 0 auto;
+}
+
+#content h2 {
+  text-align: center;
 }
 
 ul.gallery {
