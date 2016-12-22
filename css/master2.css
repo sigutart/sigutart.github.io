@@ -104,15 +104,18 @@ ul.gallery {
   height: 160px;
 }
 
-.gallery img {
+img {
   -webkit-box-shadow: 0px 2px 8px -1px rgba(80,80,80,1);
   -moz-box-shadow: 0px 2px 8px -1px rgba(80,80,80,1);
   box-shadow: 0px 2px 8px 0px rgba(80,80,80,1);
   display: block;
-  max-height: 144px;
-  max-width: 400px;
   background-color: white;
   padding: 8px;
+}
+
+.gallery img {
+  max-height: 144px;
+  max-width: 400px;
 }
 
 footer {
@@ -135,4 +138,9 @@ footer {
 .painting p {
   font-size: 12px;
   font-weight: bold;
+}
+
+.painting img {
+  max-height: 600px;
+  padding: 16px;
 }
