@@ -1,0 +1,18 @@
+<div class="painting">
+  <div class="wrapper">
+    <div class="painting-details">
+      <p>
+        $nazev$$if(material)$, $material$$endif$
+        ($if(rozmer-sirka)$$rozmer-sirka$$endif$
+        x $if(rozmer-vyska)$$rozmer-vyska$$endif$$if(ram)$, $ram$$endif$)
+        
+      </p>
+    </div>
+    <img src="$image-url$" alt="$popis$" />
+    <div class="painting-details">
+      $if(cena)$
+        <p>Cena: $cena$</p>
+      $endif$
+    <div class="painting-details">
+  </div>
+</div>

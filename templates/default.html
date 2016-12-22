@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="cs">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Šigut Art - $title$</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        <link rel="stylesheet" href="/css/master2.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+          <h1>Šigut Art</h1>
+          <ol>
+            <li $if(technique-akryl)$   class="active" $endif$>
+              <a href="/paintings/akryl.html">Akryl</a>
+            </li>
+            <li $if(technique-pastel)$  class="active" $endif$>
+              <a href="/paintings/pastel.html">Pastel</a>
+            </li>
+            <li $if(technique-olej)$    class="active" $endif$>
+              <a href="/paintings/olej.html">Olej</a>
+            </li>
+            <li $if(technique-ostatni)$ class="active" $endif$>
+              <a href="/paintings/ostatni.html">Ostatní</a>
+            </li>
+          </ol>
+        </header>
+
+        <div id="content">
+            $body$
+        </div>
+    </body>
+</html>

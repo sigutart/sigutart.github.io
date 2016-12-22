@@ -19,6 +19,20 @@ body header, .content {
   padding-right: 20px;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #333;
+}
+
+li a {
+  display: block;
+  padding: 5px;
+  padding-bottom: 8px;
+}
+
 header {
   text-align: center;
 }
@@ -32,7 +46,6 @@ header h1 {
 header ol {
   list-style: none;
   padding: 0;
-  padding-bottom: 10px;
   margin-bottom: 5px;
   border-top: 1px solid grey;
   border-bottom: 1px solid grey;
@@ -41,7 +54,6 @@ header ol {
 header li {
   display: inline-block;
   margin-left: 25px;
-  padding-top: 5px;
   font-weight: 700;
 }
 
@@ -58,7 +70,7 @@ header li.active {
   flex: 1 0 auto;
 }
 
-ol.gallery {
+ul.gallery {
   list-style: none;
   padding-left: 0;
   display: flex;
@@ -98,4 +110,21 @@ ol.gallery {
 footer {
   background-color: #333;
   height: 120px;
+}
+
+.painting {
+  text-align: center;
+}
+
+.painting .wrapper {
+  display: inline-block;
+}
+
+.painting-details {
+  text-align: left;
+}
+
+.painting p {
+  font-size: 12px;
+  font-weight: bold;
 }
