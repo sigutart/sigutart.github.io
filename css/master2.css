@@ -20,11 +20,11 @@ body header, .content {
 }
 
 a {
+  color: #333;
   text-decoration: none;
 }
 
 a:visited {
-  color: #333;
 }
 
 li a {
@@ -35,6 +35,10 @@ li a {
 
 header {
   text-align: center;
+}
+
+header nav {
+  display: inline-block;
 }
 
 header h1 {
