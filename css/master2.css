@@ -12,7 +12,7 @@ body header, body footer {
   flex: none;
 }
 
-body header, .content {
+body header, #content {
   max-width: 1200px;
   margin: auto;
   padding-left: 20px;
@@ -102,6 +102,7 @@ ul.gallery {
   display: flex;
   align-items: center;
   height: 160px;
+  margin-bottom: 8px;
 }
 
 img {
@@ -111,6 +112,11 @@ img {
   display: block;
   background-color: white;
   padding: 8px;
+}
+
+.gallery a {
+  margin: 0;
+  padding: 0;
 }
 
 .gallery img {
