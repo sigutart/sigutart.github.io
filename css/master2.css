@@ -90,12 +90,9 @@ ol.gallery {
   box-shadow: 0px 2px 8px 0px rgba(80,80,80,1);
   display: block;
   max-height: 144px;
+  max-width: 400px;
   background-color: white;
   padding: 8px;
-}
-
-.gallery img.panorama {
-  max-width: 400px;
 }
 
 footer {
