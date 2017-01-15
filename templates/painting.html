@@ -10,9 +10,15 @@
     </div>
     <img src="$image-url$" alt="$popis$" />
     <div class="painting-details">
-      $if(cena)$
-        <p>Cena: $cena$</p>
+      <p>
+      $if(dostupnost)$
+        $if(cena)$
+          <span>Cena: $cena$</span>
+        $endif$
+      $else$
+        <span class="nedostupne">Nedostupné</span>
       $endif$
+      </p>
     <div class="painting-details">
   </div>
 </div>

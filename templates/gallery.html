@@ -1,11 +1,13 @@
 <ul class="gallery">
   $for(paintings)$
     <li>
-      <a href="$url$">
-        <div class="cell">
-          <img src="$thumbnail-url$" alt="$popis$">
-        </div>
-      </a>
+      <div class="cell">
+        <a href="$url$">
+          <div class="img-wrapper $if(dostupnost)$dostupne$else$nedostupne$endif$">
+            <img src="$thumbnail-url$" alt="$popis$" >
+          </div>
+        </a>
+      </div>
       <h3>$nazev$</h3>
     </li>
   $endfor$

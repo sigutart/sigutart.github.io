@@ -68,7 +68,8 @@ main = hakyll $ do
         route idRoute
         compile $ do
           getResourceBody
-              >>= loadAndApplyTemplate "templates/default.html" defaultContext
+              >>= loadAndApplyTemplate "templates/default.html"
+                    (constField "home" "true" <> defaultContext)
               >>= relativizeUrls
 
     match "templates/*" $ compile templateBodyCompiler
@@ -111,6 +112,12 @@ paintingCtx =
            && technique /= Just "akryl"
         then return "ostatni"
         else fail "neni ostatni"
+      ) <> (
+      field "dostupnost" $ \item -> do
+        dostupnost <- getMetadataField (itemIdentifier item) "dostupnost"
+        case dostupnost of
+          Just "ano" -> return "ano"
+          _ -> fail "nedostupne"
       )
 
 galleryCtx technique paintings =

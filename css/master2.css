@@ -117,11 +117,38 @@ img {
 .gallery a {
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 .gallery img {
   max-height: 144px;
   max-width: 400px;
+}
+
+.dostupne:after, .nedostupne:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 15px 15px 0;
+  transition: border-color 700ms;
+  border-color: transparent transparent transparent transparent;
+}
+
+.nedostupne {
+  color: #9F0202;
+}
+
+.nedostupne:hover:after {
+  border-color: transparent #9F0202 transparent transparent;
+}
+
+.dostupne:hover:after {
+  border-color: transparent green transparent transparent;
 }
 
 footer {
