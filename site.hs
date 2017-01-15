@@ -4,13 +4,17 @@ import           Data.Monoid ((<>))
 import           Hakyll
 import Data.List (sortBy)
 import Data.Ord (comparing)
-import System.FilePath (takeBaseName)
+import qualified System.FilePath as FP
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyll $ do
     match "css/*" $ do
         route   idRoute
         compile compressCssCompiler
+
+    match "thumbnails/**/*.jpg" $ version "raw" $ do
+        route   idRoute
+        compile copyFileCompiler
 
     match "paintings/akryl.html" $ do
         route   idRoute
@@ -75,7 +79,12 @@ paintingCtx =
     defaultContext <> (
       field "image-url" $ \item -> do
         url <- getRoute (itemIdentifier item)
-        return $ maybe "" (\fp -> '/' : replaceExtension fp "jpg") url
+        return $ maybe "" (\fp -> '/' : FP.replaceExtension fp "jpg") url
+      ) <> (
+      field "thumbnail-url" $ \item -> do
+        url <- getRoute (itemIdentifier item)
+        return $ maybe "" (\fp ->
+          "/thumbnails" FP.</> FP.replaceExtension (FP.joinPath $ drop 1 $ FP.splitPath fp) "jpg") url
       ) <> (
       field "technique-akryl" $ \item -> do
         technique <- getMetadataField (itemIdentifier item) "technika"
@@ -109,12 +118,9 @@ galleryCtx technique paintings =
     <> listField "paintings" paintingCtx (return paintings)
     <> constField ("technique-" <> technique) technique
 
-replaceExtension :: [Char] -> [Char] -> [Char]
-replaceExtension s new = (reverse $ dropWhile (/= '.') $ reverse s) ++ new
-
 alphaFirst :: [Item a] -> Compiler [Item a] 
 alphaFirst items = return $ 
-    sortBy (comparing (takeBaseName . toFilePath . itemIdentifier)) items
+    sortBy (comparing (FP.takeBaseName . toFilePath . itemIdentifier)) items
 
 alphaLast :: [Item a] -> Compiler [Item a] 
 alphaLast items = reverse <$> alphaFirst items
