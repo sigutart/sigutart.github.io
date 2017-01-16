@@ -155,7 +155,7 @@ img {
   border-color: transparent green transparent transparent;
 }
 
-footer {
+.page-footer {
   background-color: #333;
   height: 120px;
 }
@@ -180,4 +180,61 @@ footer {
 .painting img {
   max-height: 600px;
   padding: 16px;
+}
+
+article {
+  width: 600px;
+  margin: auto;
+  font-size: 0.9em;
+  line-height: 1.6em;
+  text-align: left;
+}
+
+#content .intro h2 {
+  font-size: 1.3em;
+  font-weight: normal;
+  text-align: left;
+}
+
+aside {
+  float: left;
+  margin-right: 20px;
+}
+
+aside img {
+  max-width: 270px;
+}
+
+aside img:first-child {
+  margin-bottom: 20px;
+}
+
+footer::before {
+  content: '';
+  display: block;
+  clear: both;
+  height: 20px;
+}
+
+footer {
+  color: grey;
+  font-size: 0.8em;
+  line-height: 1.6em;
+}
+
+@media (max-width: 650px) {
+  article {
+    width: 320px;
+  }
+  aside {
+    float: none;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  aside img {
+    width: 320px;
+  }
+  aside img:first-child {
+    display: none;
+  }
 }
