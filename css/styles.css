@@ -182,12 +182,14 @@ img {
   padding: 16px;
 }
 
-article {
+article, footer {
   width: 600px;
   margin: auto;
+}
+
+article {
   font-size: 0.9em;
   line-height: 1.6em;
-  text-align: left;
 }
 
 #content .intro h2 {
@@ -223,7 +225,7 @@ footer {
 }
 
 @media (max-width: 650px) {
-  article {
+  article, footer {
     width: 320px;
   }
   aside {
