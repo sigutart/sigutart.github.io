@@ -178,6 +178,7 @@ img {
 }
 
 .painting img {
+  width: 95%;
   max-height: 600px;
   padding: 16px;
 }
