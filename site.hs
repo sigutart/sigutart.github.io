@@ -12,6 +12,10 @@ main = hakyll $ do
         route   idRoute
         compile compressCssCompiler
 
+    match "img/*" $ do
+        route   idRoute
+        compile copyFileCompiler
+
     match "thumbnails/**/*.jpg" $ version "raw" $ do
         route   idRoute
         compile copyFileCompiler

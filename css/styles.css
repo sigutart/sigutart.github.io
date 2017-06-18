@@ -208,6 +208,11 @@ aside img {
   max-width: 270px;
 }
 
+aside img.full-width {
+  max-width: none;
+  width: 580px;
+}
+
 aside img:first-child {
   margin-bottom: 20px;
 }
