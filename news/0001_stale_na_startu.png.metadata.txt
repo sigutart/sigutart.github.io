@@ -1,0 +1,2 @@
+zobrazit-od: 2017-01-01
+zobrazit-do: 2017-10-01
