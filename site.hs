@@ -84,8 +84,7 @@ main = do
 
 --------------------------------------------------------------------------------
 paintingCtx =
-    defaultContext <> (
-      field "image-url" $ \item -> do
+      (field "image-url" $ \item -> do
         url <- getRoute (itemIdentifier item)
         return $ maybe "" (\fp -> '/' : FP.replaceExtension fp "jpg") url
       ) <> (
@@ -125,7 +124,13 @@ paintingCtx =
         case dostupnost of
           Just "ano" -> return "ano"
           _ -> fail "nedostupne"
-      )
+      ) <> (
+      field "title" $ \item -> do
+        nazev <- getMetadataField (itemIdentifier item) "nazev"
+        case nazev of
+          Just x -> return x
+          _ -> fail ""
+      ) <> defaultContext
 
 galleryCtx technique paintings =
     defaultContext
