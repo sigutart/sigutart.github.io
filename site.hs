@@ -5,9 +5,12 @@ import           Hakyll
 import Data.List (sortBy)
 import Data.Ord (comparing)
 import qualified System.FilePath as FP
+import qualified GHC.IO.Encoding as E
 --------------------------------------------------------------------------------
 main :: IO ()
-main = hakyll $ do
+main = do
+  E.setLocaleEncoding E.utf8
+  hakyll $ do
     match "css/*" $ do
         route   idRoute
         compile compressCssCompiler
